@@ -1,0 +1,319 @@
+File AI Generation Error at 2026-04-23T16:27:08.402Z:
+Error: Failed to extract text from file
+    at extractTextFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\extractText.js:17:15)
+    at generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:77:37)
+    at Layer.handleRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:69:7)
+    at indicateDone (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:73:68)
+    at Multipart.<anonymous> (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:243:7)
+    at Multipart.emit (node:events:508:28)
+    at emitCloseNT (node:internal/streams/destroy:148:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:88:21)
+
+File AI Generation Error at 2026-04-23T16:27:09.389Z:
+Error: Failed to extract text from file
+    at extractTextFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\extractText.js:17:15)
+    at generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:77:37)
+    at Layer.handleRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:69:7)
+    at indicateDone (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:73:68)
+    at Multipart.<anonymous> (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:243:7)
+    at Multipart.emit (node:events:508:28)
+    at emitCloseNT (node:internal/streams/destroy:148:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:88:21)
+
+File AI Generation Error at 2026-04-23T16:27:10.023Z:
+Error: Failed to extract text from file
+    at extractTextFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\extractText.js:17:15)
+    at generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:77:37)
+    at Layer.handleRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:69:7)
+    at indicateDone (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:73:68)
+    at Multipart.<anonymous> (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:243:7)
+    at Multipart.emit (node:events:508:28)
+    at emitCloseNT (node:internal/streams/destroy:148:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:88:21)
+
+File AI Generation Error at 2026-04-23T16:56:44.604Z:
+Error: Failed to extract text from file
+    at extractTextFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\extractText.js:17:15)
+    at generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:77:37)
+    at Layer.handleRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:69:7)
+    at indicateDone (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:73:68)
+    at Multipart.<anonymous> (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:243:7)
+    at Multipart.emit (node:events:508:28)
+    at emitCloseNT (node:internal/streams/destroy:148:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:88:21)
+
+File AI Generation Error at 2026-04-23T16:56:45.898Z:
+Error: Failed to extract text from file
+    at extractTextFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\extractText.js:17:15)
+    at generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:77:37)
+    at Layer.handleRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:69:7)
+    at indicateDone (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:73:68)
+    at Multipart.<anonymous> (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:243:7)
+    at Multipart.emit (node:events:508:28)
+    at emitCloseNT (node:internal/streams/destroy:148:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:88:21)
+
+File AI Generation Error at 2026-04-23T16:56:51.262Z:
+Error: Failed to extract text from file
+    at extractTextFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\extractText.js:17:15)
+    at generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:77:37)
+    at Layer.handleRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:69:7)
+    at indicateDone (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:73:68)
+    at Multipart.<anonymous> (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:243:7)
+    at Multipart.emit (node:events:508:28)
+    at emitCloseNT (node:internal/streams/destroy:148:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:88:21)
+
+File AI Generation Error at 2026-04-23T16:56:53.513Z:
+Error: Failed to extract text from file
+    at extractTextFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\extractText.js:17:15)
+    at generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:77:37)
+    at Layer.handleRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:69:7)
+    at indicateDone (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:73:68)
+    at Multipart.<anonymous> (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:243:7)
+    at Multipart.emit (node:events:508:28)
+    at emitCloseNT (node:internal/streams/destroy:148:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:88:21)
+
+File AI Generation Error at 2026-04-23T17:02:31.552Z:
+Error: Failed to extract text from file
+    at extractTextFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\extractText.js:17:15)
+    at generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:77:37)
+    at Layer.handleRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:69:7)
+    at indicateDone (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:73:68)
+    at Multipart.<anonymous> (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:243:7)
+    at Multipart.emit (node:events:508:28)
+    at emitCloseNT (node:internal/streams/destroy:148:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:88:21)
+
+File AI Generation Error at 2026-04-23T17:02:32.502Z:
+Error: Failed to extract text from file
+    at extractTextFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\extractText.js:17:15)
+    at generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:77:37)
+    at Layer.handleRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:69:7)
+    at indicateDone (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:73:68)
+    at Multipart.<anonymous> (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:243:7)
+    at Multipart.emit (node:events:508:28)
+    at emitCloseNT (node:internal/streams/destroy:148:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:88:21)
+
+File AI Generation Error at 2026-04-23T17:02:33.285Z:
+Error: Failed to extract text from file
+    at extractTextFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\extractText.js:17:15)
+    at generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:77:37)
+    at Layer.handleRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:69:7)
+    at indicateDone (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:73:68)
+    at Multipart.<anonymous> (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:243:7)
+    at Multipart.emit (node:events:508:28)
+    at emitCloseNT (node:internal/streams/destroy:148:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:88:21)
+
+File AI Generation Error at 2026-04-23T17:02:34.036Z:
+Error: Failed to extract text from file
+    at extractTextFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\extractText.js:17:15)
+    at generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:77:37)
+    at Layer.handleRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:69:7)
+    at indicateDone (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:73:68)
+    at Multipart.<anonymous> (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\multer\lib\make-middleware.js:243:7)
+    at Multipart.emit (node:events:508:28)
+    at emitCloseNT (node:internal/streams/destroy:148:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:88:21)
+
+File AI Generation Error at 2026-04-23T17:11:11.269Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] API key not valid. Please pass a valid API key. [{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API key not valid. Please pass a valid API key."}]
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:14:20)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:62:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:111:26)
+
+File AI Generation Error at 2026-04-24T07:23:26.251Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] API key not valid. Please pass a valid API key. [{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API key not valid. Please pass a valid API key."}]
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:14:20)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:62:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:111:26)
+
+File AI Generation Error at 2026-04-24T14:55:44.355Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] API key not valid. Please pass a valid API key. [{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API key not valid. Please pass a valid API key."}]
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:14:20)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:62:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:111:26)
+
+File AI Generation Error at 2026-04-24T15:04:46.991Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] API key not valid. Please pass a valid API key. [{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API key not valid. Please pass a valid API key."}]
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:14:20)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:62:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:111:26)
+
+File AI Generation Error at 2026-04-24T15:10:37.789Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] API key not valid. Please pass a valid API key. [{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API key not valid. Please pass a valid API key."}]
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:14:20)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:62:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:111:26)
+
+File AI Generation Error at 2026-04-24T15:10:40.852Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] API key not valid. Please pass a valid API key. [{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API key not valid. Please pass a valid API key."}]
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:14:20)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:62:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:111:26)
+
+File AI Generation Error at 2026-04-24T15:26:53.589Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] API key not valid. Please pass a valid API key. [{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API key not valid. Please pass a valid API key."}]
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:14:20)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:62:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:111:26)
+
+File AI Generation Error at 2026-04-24T15:35:46.931Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] API key not valid. Please pass a valid API key. [{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API key not valid. Please pass a valid API key."}]
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:14:20)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:62:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:111:26)
+
+File AI Generation Error at 2026-04-24T15:35:48.962Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] API key not valid. Please pass a valid API key. [{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API key not valid. Please pass a valid API key."}]
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:14:20)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:62:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:111:26)
+
+File AI Generation Error at 2026-04-24T15:46:29.829Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] API key not valid. Please pass a valid API key. [{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API key not valid. Please pass a valid API key."}]
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:14:20)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:62:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:111:26)
+
+File AI Generation Error at 2026-04-24T15:54:33.425Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] API key not valid. Please pass a valid API key. [{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API key not valid. Please pass a valid API key."}]
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:14:20)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:62:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:111:26)
+
+File AI Generation Error at 2026-04-24T16:04:32.405Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] API key not valid. Please pass a valid API key. [{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API key not valid. Please pass a valid API key."}]
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:14:20)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:62:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:111:26)
+
+File AI Generation Error at 2026-04-24T17:56:33.251Z:
+Error: Failed to extract text from file: PDF parsing failed: pdfParseModule is not a function
+    at extractTextFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\extractText.js:31:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:85:31)
+
+File AI Generation Error at 2026-04-24T17:59:15.884Z:
+Error: Failed to extract text from file: PDF parsing failed: getDocument - no `url` parameter provided.
+    at extractTextFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\extractText.js:35:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:85:31)
+
+File AI Generation Error at 2026-04-24T17:59:28.402Z:
+Error: Failed to extract text from file: PDF parsing failed: getDocument - no `url` parameter provided.
+    at extractTextFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\extractText.js:35:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:85:31)
+
+File AI Generation Error at 2026-04-24T19:18:01.717Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:19:28)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:84:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:126:26)
+
+File AI Generation Error at 2026-04-24T19:55:25.744Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 29.30306068s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"model":"gemini-2.0-flash","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"29s"}]
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:24:32)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:92:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:126:26)
+
+File AI Generation Error at 2026-04-24T19:59:09.047Z:
+Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite
+Please retry in 48.05810522s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash-lite"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash-lite"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash-lite"}}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"48s"}]
+    at handleResponseNotOk (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async makeRequest (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async generateQuizWithGemini (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:24:32)
+    at async generateQuiz (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\utils\aiService.js:97:27)
+    at async generateQuizFromFile (C:\Users\dell\OneDrive\Desktop\AI QUIZ GENERATOR\server\controllers\quizController.js:126:26)
+
