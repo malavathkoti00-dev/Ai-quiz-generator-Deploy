@@ -1,0 +1,25 @@
+# Local DB and logs
+mongodb_data/
+*.log
+server.log
+
+# Node modules
+node_modules/
+/server/node_modules/
+/client/node_modules/
+
+# Env files
+.env
+.env.local
+/server/.env
+/client/.env
+
+# Root package lock (only package.json/lock inside client & server are needed)
+/package-lock.json
+
+# Local / build files
+/client/dist/
+/client/vite.config.ts.timestamp*
+/server/response.txt
+/server/test.txt
+/server/error.log

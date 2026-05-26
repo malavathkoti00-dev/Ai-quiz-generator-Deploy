@@ -16,12 +16,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return storedUsername ? { username: storedUsername } : null;
   });
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    return sessionStorage.getItem("quizUserLoggedIn") === "true";
+    const token = sessionStorage.getItem("quizUserToken");
+    return token && sessionStorage.getItem("quizUserLoggedIn") === "true";
   });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Verify session on mount if needed, but for now we trust sessionStorage
+    const token = sessionStorage.getItem("quizUserToken");
+    const loggedIn = sessionStorage.getItem("quizUserLoggedIn") === "true";
+    setIsLoggedIn(!!token && loggedIn);
     setLoading(false);
   }, []);
 

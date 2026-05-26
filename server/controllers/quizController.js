@@ -7,22 +7,28 @@ const { generateQuiz } = require("../utils/aiService");
 // @access  Private
 const generateAIQuiz = async (req, res) => {
     try {
-        const { topic, difficulty, numQuestions, category } = req.body;
+        const { topic, difficulty, numQuestions, timePerQ, category } = req.body;
+        const numberOfQuestions = Number(numQuestions) || 10;
+        const timePerQuestion = Number(timePerQ) || 30;
 
-        if (!topic || !numQuestions) {
+        if (!topic || !numberOfQuestions) {
             return res.status(400).json({ message: "Please provide a topic and number of questions" });
         }
 
         const prompt = `
-            Act as an expert educator and quiz creator. Generate a high-quality, engaging quiz on the topic: "${topic}".
+            Act as an expert educator and quiz creator. Generate a high-quality, engaging quiz based on the following input: "${topic}".
             
             Requirements:
             - Difficulty: ${difficulty || 'Medium'}
-            - Number of questions: ${numQuestions}
+            - Number of questions: ${numberOfQuestions}
+            - Time per question: ${timePerQuestion} seconds
             - Category: ${category || 'General'}
-            - The questions must be clear, concise, and test fundamental as well as nuanced understanding of the topic.
+            - If the input above is a short topic, use your general knowledge. If it is a long text or document content, base the questions strictly on that text.
+            - The questions must be clear, concise, and test fundamental as well as nuanced understanding.
             - The incorrect options (distractors) must be plausible but definitively wrong.
             - Provide a brief, insightful explanation for why the correct answer is right.
+            - Do not invent unrelated facts, filler content, or repeat unrelated trivia.
+            - Return exactly ${numberOfQuestions} questions in the JSON array. Do not return more or fewer questions.
 
             Return the response strictly in the following JSON format without any markdown wrappers:
             {
@@ -39,10 +45,10 @@ const generateAIQuiz = async (req, res) => {
             Ensure the JSON is perfectly valid.
         `;
 
-        const quizData = await generateQuiz(prompt);
+        const quizData = await generateQuiz(prompt, { allowFallback: false });
 
         const formattedDifficulty = difficulty ? (difficulty.charAt(0).toUpperCase() + difficulty.slice(1).toLowerCase()) : 'Medium';
-        const finalDifficulty = ['Easy', 'Medium', 'Hard'].includes(formattedDifficulty) ? formattedDifficulty : 'Medium';
+        const finalDifficulty = ['Easy', 'Medium', 'Hard', 'Mixed'].includes(formattedDifficulty) ? formattedDifficulty : 'Medium';
 
         // Create and save the quiz to the database
         const newQuiz = await Quiz.create({
@@ -50,13 +56,26 @@ const generateAIQuiz = async (req, res) => {
             category: category || 'General',
             difficulty: finalDifficulty,
             questions: quizData.questions,
+            timePerQuestion,
             creator: req.user.id
         });
 
         res.status(201).json(newQuiz);
     } catch (error) {
         console.error("AI Generation Error:", error);
-        res.status(500).json({ message: "Failed to generate quiz", error: error.message });
+        
+        let message = "Failed to generate quiz. Please try again.";
+        if (error.status === 429) {
+            message = "AI service is currently rate-limited. Please wait a moment and try again.";
+        } else if (error.status === 503) {
+            message = "AI service is currently overloaded. Please try again later.";
+        } else if (error.status === 403 || error.status === 401 || error.message?.includes("leaked") || error.message?.includes("API key not valid")) {
+            message = "Your AI API key is invalid or leaked. Please update it in the .env file.";
+        } else if (error.message) {
+            message = error.message;
+        }
+
+        res.status(500).json({ message, error: error.message });
     }
 };
 
@@ -67,8 +86,10 @@ const fs = require('fs');
 
 const generateQuizFromFile = async (req, res) => {
     try {
-        const { difficulty, numQuestions, category } = req.body;
+        const { difficulty, numQuestions, timePerQ, category } = req.body;
         const file = req.file;
+        const numberOfQuestions = Number(numQuestions) || 10;
+        const timePerQuestion = Number(timePerQ) || 30;
 
         console.log("Received file upload:", file ? { name: file.originalname, type: file.mimetype, size: file.size } : "No file");
 
@@ -89,7 +110,7 @@ const generateQuizFromFile = async (req, res) => {
         }
         
         if (!extractedText || extractedText.trim().length === 0) {
-            return res.status(400).json({ message: "Could not extract text from PDF. The file may be empty or corrupted." });
+            return res.status(400).json({ message: "Could not extract text from the uploaded file. The file may be empty, corrupted, or contain only images. Please try a different PDF or use the topic input method instead." });
         }
 
         const prompt = `
@@ -101,11 +122,14 @@ const generateQuizFromFile = async (req, res) => {
             ---
             Requirements:
             - Difficulty: ${difficulty || 'Medium'}
-            - Number of questions: ${numQuestions || 5}
+            - Number of questions: ${numberOfQuestions}
+            - Time per question: ${timePerQuestion} seconds
             - Category: ${category || 'General'}
             - The questions must be clear, concise, and unambiguously test the core concepts from the text.
             - The incorrect options (distractors) must be plausible but definitively wrong.
             - Provide a brief, insightful explanation for why the correct answer is right based on the text.
+            - Use only the provided text content. Do not invent unrelated details or make up facts.
+            - Return exactly ${numberOfQuestions} questions in the JSON array. Do not return more or fewer questions.
 
             Return the response strictly in the following JSON format without any markdown wrappers (e.g. do not wrap in \`\`\`json):
             {
@@ -122,18 +146,19 @@ const generateQuizFromFile = async (req, res) => {
             Ensure the JSON is perfectly valid.
         `;
 
-        console.log("Calling AI to generate quiz...");
-        const quizData = await generateQuiz(prompt);
-        console.log("AI generated quiz:", quizData.title, "with", quizData.questions.length, "questions");
+        console.log("Calling AI to generate quiz from file content...");
+        const quizData = await generateQuiz(prompt, { allowFallback: false });
+        console.log("AI generated quiz from file:", quizData.title, "with", quizData.questions.length, "questions");
 
         const formattedDifficulty = difficulty ? (difficulty.charAt(0).toUpperCase() + difficulty.slice(1).toLowerCase()) : 'Medium';
-        const finalDifficulty = ['Easy', 'Medium', 'Hard'].includes(formattedDifficulty) ? formattedDifficulty : 'Medium';
+        const finalDifficulty = ['Easy', 'Medium', 'Hard', 'Mixed'].includes(formattedDifficulty) ? formattedDifficulty : 'Medium';
 
         const newQuiz = await Quiz.create({
             title: quizData.title || "File Generated Quiz",
             category: category || 'General',
             difficulty: finalDifficulty,
             questions: quizData.questions,
+            timePerQuestion,
             creator: req.user.id
         });
 
@@ -145,9 +170,13 @@ const generateQuizFromFile = async (req, res) => {
         
         let message = "Failed to generate quiz from file";
         if (error.status === 429) {
-            message = "AI service is currently rate-limited (Free Tier). Please wait 30 seconds and try again.";
+            message = "AI service is currently rate-limited. Please wait a moment and try again.";
         } else if (error.status === 503) {
-            message = "AI service is currently overloaded. Please try again in a few moments.";
+            message = "AI service is currently overloaded. Please try again later.";
+        } else if (error.status === 403 || error.status === 401 || error.message?.includes("leaked") || error.message?.includes("API key not valid")) {
+            message = "Your AI API key is invalid or leaked. Please update it in the .env file.";
+        } else if (error.message) {
+            message = error.message;
         }
         
         res.status(500).json({ 

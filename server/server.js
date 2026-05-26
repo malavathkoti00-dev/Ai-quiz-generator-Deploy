@@ -8,9 +8,15 @@ const { Server } = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
+
+// Allowed origins for CORS (supports multiple via comma-separated CLIENT_URL)
+const allowedOrigins = process.env.CLIENT_URL
+    ? process.env.CLIENT_URL.split(',').map(u => u.trim())
+    : ['http://localhost:8080', 'http://localhost:5173'];
+
 const io = new Server(server, {
     cors: {
-        origin: "*",
+        origin: allowedOrigins,
         methods: ["GET", "POST"]
     }
 });
@@ -19,7 +25,10 @@ const io = new Server(server, {
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: allowedOrigins,
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -31,6 +40,11 @@ app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/quizzes', require('./routes/quizRoutes'));
 app.use('/api/attempts', require('./routes/attemptRoutes'));
 
+// Health check endpoint (for Render monitoring)
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 // Basic route for testing
 app.get('/', (req, res) => {
     res.send('AI Quiz Generator API is running...');
@@ -38,6 +52,6 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on port ${PORT}`);
 });

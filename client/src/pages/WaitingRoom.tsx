@@ -1,26 +1,48 @@
 import { useSocket } from "../hooks/useSocket";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 import Button from "../components/Button";
+import { quizService } from "../services/api";
 
 const WaitingRoom = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const state = location.state as { isHost?: boolean; topic?: string; code?: string } | null;
+  const state = location.state as { 
+    isHost?: boolean; 
+    code?: string;
+    settings?: {
+      topic: string;
+      numQuestions: number;
+      difficulty: string;
+      timeLimit: number;
+      inputMethod: "topic" | "file" | "text";
+      content: string;
+    };
+    file?: File;
+  } | null;
+
   const roomCode = state?.code ?? "";
-  const topic = state?.topic ?? "Science";
+  const settings = state?.settings;
   const isHost = state?.isHost ?? false;
 
-  const { gameState, startGame, joinRoom, connected } = useSocket();
+  const { gameState, startGame, joinRoom, connected, clearError } = useSocket();
   const [generating, setGenerating] = useState(false);
 
   useEffect(() => {
-    if (roomCode) {
+    if (roomCode && connected) {
       joinRoom(roomCode, isHost);
     }
-  }, [roomCode, joinRoom, isHost]);
+  }, [roomCode, joinRoom, isHost, connected]);
+
+  useEffect(() => {
+    if (gameState.error) {
+      alert(gameState.error);
+      clearError();
+      navigate("/game");
+    }
+  }, [gameState.error, navigate, clearError]);
 
   useEffect(() => {
     if (gameState.started) {
@@ -29,16 +51,29 @@ const WaitingRoom = () => {
   }, [gameState.started, navigate, gameState.quiz, roomCode]);
 
   const handleStart = async () => {
-    if (!isHost) return;
+    if (!isHost || !settings) return;
     setGenerating(true);
     try {
-      // Fetch a real quiz by topic
-      const response = await quizService.generate({
-        topic: topic,
-        numQuestions: 10,
-        difficulty: "Medium",
-        category: topic
-      });
+      let response;
+      if (settings.inputMethod === "file" && state.file) {
+        const formData = new FormData();
+        formData.append("file", state.file);
+        formData.append("numQuestions", settings.numQuestions.toString());
+        formData.append("difficulty", settings.difficulty);
+        formData.append("timePerQ", settings.timeLimit.toString());
+        formData.append("category", "Multiplayer");
+        response = await quizService.generateFromFile(formData);
+      } else {
+        // Handle topic or pasted text
+        const quizInput = settings.inputMethod === "text" ? settings.content : settings.topic;
+        response = await quizService.generate({
+          topic: quizInput,
+          numQuestions: settings.numQuestions,
+          difficulty: settings.difficulty,
+          timePerQ: settings.timeLimit,
+          category: "Multiplayer"
+        });
+      }
       
       const quiz = response.data;
       if (quiz && quiz.questions) {
@@ -46,9 +81,10 @@ const WaitingRoom = () => {
       } else {
         throw new Error("Failed to generate quiz for game");
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error("Game Start Error:", err);
-      alert("Failed to start game: " + (err instanceof Error ? err.message : "Unknown error"));
+      const errorMsg = err.response?.data?.message || err.message || "Unknown error";
+      alert("Failed to start game: " + errorMsg);
     } finally {
       setGenerating(false);
     }
@@ -73,7 +109,7 @@ const WaitingRoom = () => {
 
           <Card className="animate-fadeInUp stagger-1" style={{ marginBottom: 24 }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16 }}>
-              <span style={{ fontSize: 14, color: "var(--text-muted)" }}>Topic: <strong style={{ color: "var(--text)" }}>{topic}</strong></span>
+              <span style={{ fontSize: 14, color: "var(--text-muted)" }}>Topic: <strong style={{ color: "var(--text)" }}>{settings?.topic || "General"}</strong></span>
               <span style={{ fontSize: 14, color: "var(--text-muted)" }}>Players: <strong style={{ color: "var(--text)" }}>{players.length}/8</strong></span>
             </div>
 

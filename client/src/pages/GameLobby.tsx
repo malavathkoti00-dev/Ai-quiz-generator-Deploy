@@ -14,14 +14,36 @@ const GameLobby = () => {
   const [roomCode, setRoomCode] = useState("");
   const [tab, setTab] = useState<"create" | "join">("create");
   const [numQuestions, setNumQuestions] = useState(10);
+  const [difficulty, setDifficulty] = useState("Medium");
+  const [timeLimit, setTimeLimit] = useState(30);
+  const [inputMethod, setInputMethod] = useState<"topic" | "file" | "text">("topic");
+  const [content, setContent] = useState("");
+  const [file, setFile] = useState<File | null>(null);
 
   const handleCreate = () => {
-    const newCode = Math.random().toString(36).substring(2, 7).toUpperCase();
-    navigate("/game/waiting", { state: { isHost: true, topic: selectedTopic, code: newCode } });
+    const newCode = Array.from({ length: 6 }, () => 
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"[Math.floor(Math.random() * 36)]
+    ).join("");
+    navigate("/game/waiting", { 
+      state: { 
+        isHost: true, 
+        code: newCode,
+        settings: {
+          topic: selectedTopic || "General Knowledge",
+          numQuestions,
+          difficulty,
+          timeLimit,
+          inputMethod,
+          content,
+          file: file ? { name: file.name, type: file.type } : null // Simple file metadata
+        },
+        file: file // Actual file object for processing
+      } 
+    });
   };
 
   const handleJoin = () => {
-    navigate("/game/waiting", { state: { isHost: false, code: roomCode } });
+    navigate("/game/waiting", { state: { isHost: false, code: roomCode.trim() } });
   };
 
   return (
@@ -40,58 +62,86 @@ const GameLobby = () => {
           </div>
 
           {/* Tabs */}
-          <div className="tabs animate-fadeInUp stagger-1" style={{ justifyContent: "center" }}>
+          <div className="tabs animate-fadeInUp stagger-1" style={{ justifyContent: "center", marginBottom: 30 }}>
             <button className={`tab ${tab === "create" ? "active" : ""}`} onClick={() => setTab("create")}>Create Room</button>
             <button className={`tab ${tab === "join" ? "active" : ""}`} onClick={() => setTab("join")}>Join Room</button>
           </div>
 
           {tab === "create" ? (
             <Card className="animate-fadeInUp stagger-2">
-              <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 24 }}>🎯 Select Topic</h2>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 24 }}>
-                {topics.map((t) => (
-                  <button
-                    key={t}
-                    onClick={() => setSelectedTopic(t)}
-                    style={{
-                      padding: "8px 16px",
-                      borderRadius: "var(--radius-full)",
-                      border: "1px solid var(--border)",
-                      background: selectedTopic === t ? "var(--primary)" : "var(--bg-secondary)",
-                      color: selectedTopic === t ? "white" : "var(--text)",
-                      cursor: "pointer",
-                      fontSize: 14,
-                      fontWeight: 500,
-                      transition: "all 0.2s ease",
-                    }}
-                  >
-                    {t}
-                  </button>
-                ))}
+              <div style={{ marginBottom: 24 }}>
+                <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 16 }}>🛠️ Game Settings</h2>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+                  <div>
+                    <label className="label">Questions</label>
+                    <select value={numQuestions} onChange={(e) => setNumQuestions(Number(e.target.value))} className="input">
+                      {[5, 10, 15, 20].map(n => <option key={n} value={n}>{n} Qs</option>)}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="label">Time Limit</label>
+                    <select value={timeLimit} onChange={(e) => setTimeLimit(Number(e.target.value))} className="input">
+                      {[15, 30, 45, 60].map(n => <option key={n} value={n}>{n}s / Question</option>)}
+                    </select>
+                  </div>
+                </div>
+                <div style={{ marginTop: 16 }}>
+                  <label className="label">Difficulty</label>
+                  <div style={{ display: "flex", gap: 10 }}>
+                    {["Easy", "Medium", "Hard"].map(d => (
+                      <button 
+                        key={d} 
+                        onClick={() => setDifficulty(d)}
+                        className={`chip ${difficulty === d ? "active" : ""}`}
+                        style={{ flex: 1 }}
+                      >
+                        {d}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               <div style={{ marginBottom: 24 }}>
-                <label className="label">Number of Questions</label>
-                <select
-                  value={numQuestions}
-                  onChange={(e) => setNumQuestions(Number(e.target.value))}
-                  style={{
-                    width: "100%",
-                    padding: "12px 16px",
-                    borderRadius: "var(--radius-lg)",
-                    border: "1px solid var(--border)",
-                    background: "var(--bg-secondary)",
-                    color: "var(--text)",
-                    fontSize: 14,
-                  }}
-                >
-                  {[5, 10, 15, 20].map((n) => <option key={n} value={n}>{n} questions</option>)}
-                </select>
+                <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 16 }}>📝 Quiz Content</h2>
+                <div className="tabs-mini" style={{ marginBottom: 16 }}>
+                  <button className={`tab-mini ${inputMethod === "topic" ? "active" : ""}`} onClick={() => setInputMethod("topic")}>Topic</button>
+                  <button className={`tab-mini ${inputMethod === "file" ? "active" : ""}`} onClick={() => setInputMethod("file")}>PDF File</button>
+                  <button className={`tab-mini ${inputMethod === "text" ? "active" : ""}`} onClick={() => setInputMethod("text")}>Paste Text</button>
+                </div>
+
+                {inputMethod === "topic" && (
+                  <Input 
+                    placeholder="Enter a topic (e.g. World War II)" 
+                    value={selectedTopic} 
+                    onChange={(e) => setSelectedTopic(e.target.value)} 
+                  />
+                )}
+
+                {inputMethod === "file" && (
+                  <div className="file-upload">
+                    <input type="file" accept=".pdf" onChange={(e) => setFile(e.target.files?.[0] || null)} id="game-file" hidden />
+                    <label htmlFor="game-file" className="file-label">
+                      {file ? `📄 ${file.name}` : "📁 Click to upload PDF"}
+                    </label>
+                  </div>
+                )}
+
+                {inputMethod === "text" && (
+                  <textarea 
+                    className="input" 
+                    placeholder="Paste your content here..." 
+                    rows={4} 
+                    value={content} 
+                    onChange={(e) => setContent(e.target.value)}
+                    style={{ resize: "none" }}
+                  />
+                )}
               </div>
 
               <Button
                 onClick={handleCreate}
-                disabled={!selectedTopic}
+                disabled={inputMethod === "topic" ? !selectedTopic : inputMethod === "file" ? !file : !content}
                 variant="primary"
                 size="lg"
                 isBlock
@@ -106,20 +156,20 @@ const GameLobby = () => {
                 type="text"
                 value={roomCode}
                 onChange={(e) => setRoomCode(e.target.value.toUpperCase())}
-                placeholder="e.g., XK7M2"
+                placeholder="ENTER CODE"
                 style={{
                   textAlign: "center",
-                  letterSpacing: 4,
+                  letterSpacing: 8,
                   fontFamily: "var(--font-display)",
                   fontWeight: 700,
-                  fontSize: 24,
+                  fontSize: 32,
                   marginBottom: 24,
                 }}
-                maxLength={5}
+                maxLength={6}
               />
               <Button
                 onClick={handleJoin}
-                disabled={roomCode.length < 4}
+                disabled={roomCode.trim().length < 4}
                 variant="primary"
                 size="lg"
                 isBlock

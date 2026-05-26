@@ -31,9 +31,12 @@ interface GameState {
   currentRound?: number;
   totalRounds?: number;
   isHost?: boolean;
+  error?: string;
 }
 
-const SOCKET_URL = "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const SOCKET_URL = API_URL.replace("/api", "");
+
 
 export function useSocket() {
   const [connected, setConnected] = useState(false);
@@ -135,15 +138,23 @@ export function useSocket() {
       }));
     });
 
+    socket.on("error", (data: any) => {
+      setGameState(prev => ({ ...prev, error: data.message }));
+    });
+
     return () => {
       socket.disconnect();
     };
   }, []);
 
+  const clearError = useCallback(() => {
+    setGameState(prev => ({ ...prev, error: undefined }));
+  }, []);
+
   const joinRoom = useCallback((roomId: string, isHost = false) => {
+    setGameState(prev => ({ ...prev, roomCode: roomId, isHost }));
     if (socketRef.current) {
       socketRef.current.emit("join_room", { roomId, isHost });
-      setGameState(prev => ({ ...prev, roomCode: roomId, isHost }));
     }
   }, []);
 
@@ -199,5 +210,6 @@ export function useSocket() {
     submitAnswer,
     setReady,
     leaveRoom,
+    clearError,
   };
 }

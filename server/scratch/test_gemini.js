@@ -1,25 +1,21 @@
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 require('dotenv').config();
 
-const testGemini = async () => {
-    const key = process.env.GEMINI_API_KEY;
-    console.log("Using key:", key.substring(0, 10) + "...");
-    const genAI = new GoogleGenerativeAI(key);
+async function testGemini() {
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+    const models = ['gemini-1.5-flash', 'gemini-2.0-flash-lite', 'gemini-2.0-flash'];
     
-    const modelsToTry = ['gemini-1.5-flash', 'gemini-1.5-flash-latest', 'gemini-pro'];
-    
-    for (const modelName of modelsToTry) {
-        console.log(`\nTrying model: ${modelName}`);
+    for (const modelName of models) {
         try {
+            console.log(`Testing model: ${modelName}`);
             const model = genAI.getGenerativeModel({ model: modelName });
-            const result = await model.generateContent("Say hello world in 3 words.");
+            const result = await model.generateContent("Say hello");
             const response = await result.response;
-            console.log(`Success with ${modelName}:`, response.text());
-            return; // Stop if success
+            console.log(`Success with ${modelName}: ${response.text()}`);
         } catch (err) {
-            console.error(`Error with ${modelName}:`, err.message);
+            console.error(`Error with ${modelName}: ${err.message}`);
         }
     }
-};
+}
 
 testGemini();

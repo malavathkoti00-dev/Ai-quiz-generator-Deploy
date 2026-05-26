@@ -16,6 +16,7 @@ const demoQuiz = {
   title: "Demo Quiz",
   category: "General",
   difficulty: "medium",
+  timePerQuestion: 30,
   questions: [
     {
       question: "What is the capital of France?",
@@ -65,12 +66,15 @@ const QuizPage = () => {
   const [score, setScore] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [timer, setTimer] = useState(30);
+  const [timePerQuestion, setTimePerQuestion] = useState(30);
 
   useEffect(() => {
     const fetchQuiz = async () => {
       // If no quizId or it's a placeholder/demo, load demo quiz
       if (!quizId || quizId === "demo" || quizId === "undefined" || quizId === "null") {
         setQuiz(demoQuiz);
+        setTimePerQuestion(demoQuiz.timePerQuestion || 30);
+        setTimer(demoQuiz.timePerQuestion || 30);
         setLoading(false);
         return;
       }
@@ -85,7 +89,10 @@ const QuizPage = () => {
             ...q,
             correctIndex: q.options ? q.options.indexOf(q.correctAnswer) : -1
           }));
+          const duration = quizData.timePerQuestion || 30;
           setQuiz(quizData);
+          setTimePerQuestion(duration);
+          setTimer(duration);
           console.log("Quiz loaded successfully:", quizData);
         } else {
           throw new Error("Invalid quiz data received");
@@ -136,7 +143,8 @@ const QuizPage = () => {
       setCurrentQ((c) => c + 1);
       setSelected(null);
       setAnswered(false);
-      setTimer(30);
+      setTimer(quiz?.timePerQuestion || 30);
+      setTimePerQuestion(quiz?.timePerQuestion || 30);
     } else {
       navigate("/results", { 
         state: { 
@@ -179,7 +187,8 @@ const QuizPage = () => {
     );
   }
 
-  const timerPercent = (timer / 30) * 100;
+  const duration = quiz?.timePerQuestion || timePerQuestion || 30;
+  const timerPercent = (timer / duration) * 100;
   const timerColor = timer > 10 ? "var(--primary)" : timer > 5 ? "var(--warning)" : "var(--error)";
 
   return (

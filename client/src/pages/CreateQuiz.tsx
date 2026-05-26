@@ -43,6 +43,7 @@ const CreateQuiz = () => {
           topic,
           difficulty,
           numQuestions,
+          timePerQ,
           category: "General"
         });
       } else if (mode === "pdf") {
@@ -55,6 +56,7 @@ const CreateQuiz = () => {
         formData.append("file", file);
         formData.append("difficulty", difficulty);
         formData.append("numQuestions", numQuestions.toString());
+        formData.append("timePerQ", timePerQ.toString());
         formData.append("category", "General");
         
         console.log("Sending FormData with file:", file.name, file.type, file.size);
@@ -71,6 +73,7 @@ const CreateQuiz = () => {
         formData.append("file", textFile);
         formData.append("difficulty", difficulty);
         formData.append("numQuestions", numQuestions.toString());
+        formData.append("timePerQ", timePerQ.toString());
         formData.append("category", "General");
         
         response = await quizService.generateFromFile(formData);
@@ -85,7 +88,10 @@ const CreateQuiz = () => {
     } catch (err: any) {
       console.error("Generate error:", err);
       console.error("Error response:", err.response);
-      const errorMsg = err.response?.data?.message || err.message || "Failed to generate quiz. Please try again.";
+      const errorMsg =
+        err.response?.status === 401
+          ? "Your session has expired or your login is invalid. Please log in again."
+          : err.response?.data?.message || err.message || "Failed to generate quiz. Please try again.";
       setError(errorMsg);
       setGenerating(false);
     }

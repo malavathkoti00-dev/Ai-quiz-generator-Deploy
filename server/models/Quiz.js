@@ -32,8 +32,13 @@ const quizSchema = new mongoose.Schema({
     },
     difficulty: {
         type: String,
-        enum: ['Easy', 'Medium', 'Hard'],
+        enum: ['Easy', 'Medium', 'Hard', 'Mixed'],
         default: 'Medium'
+    },
+    timePerQuestion: {
+        type: Number,
+        default: 30,
+        min: 5
     },
     questions: [questionSchema],
     creator: {

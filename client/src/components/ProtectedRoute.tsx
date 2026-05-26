@@ -11,7 +11,8 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   const location = useLocation();
 
   // Check sessionStorage as a second source of truth to prevent race conditions during redirect
-  const hasLocalSession = sessionStorage.getItem("quizUserLoggedIn") === "true";
+  const token = sessionStorage.getItem("quizUserToken");
+  const hasLocalSession = token && sessionStorage.getItem("quizUserLoggedIn") === "true";
 
   if (loading) {
     return (
@@ -23,7 +24,10 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   }
 
   if (!isLoggedIn && !hasLocalSession) {
-    // Redirect to login page but save the current location they were trying to access
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  if (!token) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
